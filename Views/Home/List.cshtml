@@ -1,0 +1,26 @@
+@model IEnumerable<Finale.Models.Author>
+
+
+<div class="back">
+    <a asp-action="Index">Go Back</a>
+</div>
+<div class="tbl">
+    <table >
+    <tr>
+        <th >Author's ID</th>
+        <th class="t1">Name</th>
+        <th> Actions</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th>@item.Id</th>
+            <th>@item.Name</th>
+            <th>
+                <a asp-action="Update" asp-route-id="@item.Id" class="up-btn">Update</a>
+                <a asp-action="Delete" asp-route-id="@item.Id" class="del-btn">Delete</a>
+            </th>
+        </tr>
+    }
+   </table>
+</div>

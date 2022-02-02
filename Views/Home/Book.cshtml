@@ -1,0 +1,29 @@
+@model Finale.Models.Book;
+
+
+
+
+<h1>Add Book</h1>
+<hr>
+<br>
+
+
+<form method="post">
+    <label class="label-author">Author</label>
+    <p>
+        <select class="labels" asp-for="Name" asp-items="@(new SelectList(@ViewBag.message,"Name","Name"))" required>
+            
+        </select>
+         
+    </p>
+    <label asp-for="BookName" class="label-author">Name of Book</label>
+    <p>
+        <input asp-for="BookName" type="text" class="label-author" required>
+    </p>
+   <div class="disp">
+        <p><button type="submit" class="save-btn">Save</button></p>
+        <a asp-action="Index" class="cans">Cancel</a>
+   </div>
+</form>
+
+

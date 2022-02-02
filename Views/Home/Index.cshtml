@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Finale.Models.Book>
+@{
+    ViewData["Title"] = "Finals";
+}
+
+
+
+<div class="cont">
+    <a href=@Url.ActionLink("Author","Home")>Authors</a>
+    <a href=@Url.ActionLink("Book","Home")>Books</a>
+</div>
+
+<hr>
+<br>
+<div class="list-btn">
+    <a href=@Url.ActionLink("List","Home") class="list">List of Authors</a>
+</div>
+<div class="tbl">
+    <table>
+    <tr>
+        <th class="a1">Book Id</th>
+        <th class="a2">Book Name</th>
+        <th class="a3">Author</th>
+        <th class="a4">Actions</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th >@item.Id</th>
+            <th >@item.BookName</th>
+            <th >@item.Name</th>
+            <th>
+                <a asp-action="Bupdate" asp-route-id="@item.Id" class="up-btn">Update</a>
+                <a asp-action="Bdelete" asp-route-id="@item.Id" class="del-btn">Delete</a>
+            </th>
+
+        </tr>
+    }
+
+</table>
+</div>
+

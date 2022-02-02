@@ -1,0 +1,21 @@
+@model Finale.Models.Author;
+
+
+
+<h1>Add Author</h1>
+<hr>
+<br>
+
+<form asp-action="Update">
+      <label asp-for="Name" class="label-author">Name of Author</label>
+    <p>
+        
+        <input asp-for="Name" class="inp-author" required>
+    </p>
+    
+    <div class="disp" >
+        <p><button type="submit" class="save-btn">Update</button></p>
+        <a asp-action="List" class="cans">Cancel</a>
+    </div>
+</form>
+
